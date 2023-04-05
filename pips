@@ -1,0 +1,6 @@
+pip install django-rest-framework django Pygments
+
+
+
+
+https://docs.djangoproject.com/en/4.1/topics/testing/tools/ - test documentation
