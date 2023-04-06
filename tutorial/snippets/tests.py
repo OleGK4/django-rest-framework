@@ -18,18 +18,18 @@ class Test(unittest.TestCase):
     def test_delete_snippet(self):
         client = APIClient()
         client.login(username='admin', password='admin')
-        response = client.delete(self.base_url + 'snippets/25/')
+        response = client.delete(self.base_url + 'snippets/2/')
         assert response.status_code == 205
 
     def test_put_snippet(self):
         client = APIClient()
         client.login(username='admin', password='admin')
-        response = client.put(self.base_url + 'snippets/26/', {'code': '"<?php\r\n echo \"Greetings\""'}, format='json')
+        response = client.put(self.base_url + 'snippets/1/', {'code': '"<?php\r\n echo \"Greetings\""'}, format='json')
         assert response.status_code == 200
 
     def test_post_snippet(self):
         client = APIClient()
         client.login(username='admin', password='admin')
-        response = client.post(self.base_url + 'snippets/', {'code': '"<?php\r\n echo \"Hello World\""'},
+        response = client.post(self.base_url + 'snippets/', {'code': '"\"<?php\r\n echo \"Zdarova\"\""'},
                                format='json')
         assert response.status_code == 201
